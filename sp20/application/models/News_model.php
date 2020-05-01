@@ -11,14 +11,14 @@ class News_model extends CI_Model {
 
         public function get_news($slug = FALSE)
         {
-        if ($slug === FALSE)
-        {
-                $query = $this->db->get('sp20_news');
-                return $query->result_array();
-        }
+                if ($slug === FALSE)
+                {
+                        $query = $this->db->get('sp20_news');
+                        return $query->result_array();
+                }
 
-        $query = $this->db->get_where('sp20_news', array('slug' => $slug));
-        return $query->row_array();
+                $query = $this->db->get_where('sp20_news', array('slug' => $slug));
+                return $query->row_array();
         }
 
         public function set_news()
@@ -33,7 +33,13 @@ class News_model extends CI_Model {
                 'text' => $this->input->post('text')
         );
 
-        return $this->db->insert('sp20_news', $data);
+        //return $this->db->insert('sp20_news', $data);
+
+        if($this->db->insert('sp20_news', $data)){ //return slug - send to view page
+                return $slug;
+        }else{ //return false
+                return false;
+        }
+        
         }
 }
-
