@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://sekllancr.dreamhosters.com/itc260-sp2020/sp20';
+$config['base_url'] = 'http://sekllancr.dreamhosters.com/itc260-sp2020/sp20/';
 
 /*
 |--------------------------------------------------------------------------

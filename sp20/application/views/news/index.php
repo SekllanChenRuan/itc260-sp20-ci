@@ -15,5 +15,6 @@ $this->load->view($this->config->item('theme') . 'header');
         <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
 
 <?php endforeach; 
-$this->load->view($this->config->item('theme') . 'footer');
 ?>
+
+<?php $this->load->view($this->config->item('theme') . 'footer'); ?>
